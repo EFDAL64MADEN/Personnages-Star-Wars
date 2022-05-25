@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
+
+*{
+    font-family: 'Odibee Sans', cursive;
+
+}
+
+body{
+    background: url('../img/swbg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    font-size: 3em;
+    text-align: center;
+    color: red;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.8em;
+}
+
+label{
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px white;
+}
+
+select{
+    margin-bottom: 20px;
+    width: 250px;
+    height: 40px;
+    font-size: 1em;
+}
+
+input{
+    width: 120px;
+    height: 25px;
+    font-size: 0.7em;
+}
+
+div{
+    width: 300px;
+    margin-top: 50px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+h2{
+    width: 100%;
+    background-color: grey;
+    text-align: center;
+    margin-top: 0;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid black
+}
+
+p{
+    font-size: 1.6em;
+    margin-left: 10px;
+}
+
+.fin{
+    text-align: center;
+    color: red;
+    margin-top: 80px;
+}
+
+footer{
+    height: 60px;
+    background-color: black;
+    color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
