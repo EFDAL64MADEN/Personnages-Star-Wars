@@ -2,22 +2,31 @@ var header = document.querySelector('header');
 var section = document.querySelector('section');
 var mySelect = document.querySelector('select');
 var affichage = document.createElement('div');
+// Sélection de plusieurs élements HTML + création d'une div qui contiendra les infos d'un personnage
 
 var requestURL = 'https://swapi.dev/api/people';
+// Récupération du lien de l'API dans une variable
 
 var request = new XMLHttpRequest();
+// Nouvelle requête XMLHttpRequest
 request.open('GET', requestURL);
+// Pour ouvrir une nouvelle requête, on utilisera la méthode open(), qui attend au moins deux paramètres
+// Ici, GET sera le premier paramètre, et celui-ci va demander une représentation de la ressource spécifiée en deuxième paramètre, qui sera notre variable requestURL, qui contient le lien du json
 request.responseType = 'json';
+// On indique que l'on attend une réponse de type json
 request.send();
+// On envoie la requête
 
 request.onload = function() {
+// Au chargement de la requête, on lance une fonction qui va récupérer la réponse dans une variable, et traîter cette réponse via 2 fonctions que nous décrirons plus bas
     var starWarsHeroes = request.response;
     getHeroes(starWarsHeroes);
     getHeroesInformations(starWarsHeroes);
 }
 
 function getHeroes(jsonObj){
-
+// Fonction qui va permettre de récupérer les 'results' de la requête dans une variable, et de créer des <option> pour chaque personnage de liste grâce à leur nom
+// Ces <option> seront enfant du <select> déjà existant : c'est ce qui va nous permettre de faire la liste déroulante
     var heroes = jsonObj['results'];
 
     for(var i = 0; i < heroes.length; i++){
@@ -49,7 +58,8 @@ function $_GET(param) {
 }
 
 function getHeroesInformations(parametre){
-
+// Fonction qui va nous permettre de récupérer l'id du personnage dans l'url (affiché au moment du click sur le <input> de type submit, l'identifiant ayanyt pour nom 'heroes'), et de crééer les éléments HTML qui vot permettre d'afficher ses informations
+// Les liens de parenté sont gérés avec appendChild
     var personnageID = $_GET("heroes")
     var heroName = document.createElement('h2');
     heroName.textContent = parametre.results[personnageID].name;
